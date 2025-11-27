@@ -1,0 +1,52 @@
+========================================
+РЕШЕНИЕ ПРОБЛЕМЫ SSL С JAVA 8u51
+========================================
+
+Проблема: Java 1.8.0_51 слишком старая и не поддерживает современные SSL сертификаты.
+
+РЕШЕНИЕ 1 (РЕКОМЕНДУЕТСЯ):
+----------------------------------------
+Обновите Java до версии 8u251 или выше:
+
+1. Скачайте Java 8 LTS:
+   https://adoptium.net/temurin/releases/?version=8
+   
+2. Установите Java
+
+3. Убедитесь, что новая Java в PATH:
+   java -version
+
+4. Запустите сборку:
+   C:\maven-mvnd-1.0.3-windows-amd64\bin\mvnd.cmd clean package
+
+РЕШЕНИЕ 2 (ОБНОВЛЕНИЕ TRUSTSTORE):
+----------------------------------------
+1. Скачайте InstallCert.java:
+   https://github.com/escline/InstallCert
+
+2. Скомпилируйте:
+   javac InstallCert.java
+
+3. Запустите:
+   java InstallCert repo.maven.apache.org:443
+
+4. Это создаст файл jssecacerts
+
+5. Скопируйте в:
+   C:\Program Files\Java\jre1.8.0_51\lib\security\jssecacerts
+
+РЕШЕНИЕ 3 (ОФФЛАЙН РЕЖИМ):
+----------------------------------------
+Если у вас есть доступ к другому компьютеру с новой Java:
+
+1. На другом компьютере выполните:
+   mvn dependency:go-offline
+   mvn package
+
+2. Скопируйте папку .m2/repository на этот компьютер
+
+3. Запустите:
+   mvn clean package -o
+
+========================================
+

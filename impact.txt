@@ -1,0 +1,118 @@
+========================================
+ИНСТРУКЦИЯ ПО СОЗДАНИЮ ZINGERSOFT.JAR
+========================================
+
+ШАГ 1: ПОДГОТОВКА
+----------------------------------------
+1. Убедитесь, что установлен Java JDK 8 или выше
+   Проверка: java -version
+   
+2. Установите Apache Maven
+   Скачать: https://maven.apache.org/download.cgi
+   Добавьте Maven в PATH системы
+   Проверка: mvn -version
+
+ШАГ 2: СОБОРКА JAR ФАЙЛА
+----------------------------------------
+Откройте командную строку/терминал в папке проекта (C:\ZingerSoft)
+
+Выполните команду:
+    mvn clean package
+
+Это создаст JAR файл в папке:
+    target/zingersoft-1.0.0.jar
+
+ШАГ 3: ПЕРЕИМЕНОВАНИЕ (ОПЦИОНАЛЬНО)
+----------------------------------------
+Если хотите переименовать файл в zingersoft.jar:
+
+Windows:
+    cd target
+    ren zingersoft-1.0.0.jar zingersoft.jar
+
+Linux/Mac:
+    cd target
+    mv zingersoft-1.0.0.jar zingersoft.jar
+
+ШАГ 4: УСТАНОВКА В MINECRAFT
+----------------------------------------
+1. Установите Minecraft Forge 1.12.2
+   Версия: 14.23.5.2860
+   Скачать: https://files.minecraftforge.net/
+
+2. Установите Forge (запустите установщик)
+
+3. Скопируйте JAR файл в папку mods:
+   
+   Windows:
+   %appdata%\.minecraft\mods\
+   
+   Linux:
+   ~/.minecraft/mods/
+   
+   Mac:
+   ~/Library/Application Support/minecraft/mods/
+
+4. Запустите Minecraft с Forge профилем
+
+ШАГ 5: ИСПОЛЬЗОВАНИЕ
+----------------------------------------
+- Нажмите Right Shift для открытия ClickGUI
+- Используйте команды в чате с префиксом "." (точка)
+- Доступные команды:
+  .help - список всех команд
+  .toggle <module> - включить/выключить модуль
+  .bind <module> <key> - привязать клавишу к модулю
+  .config save <name> - сохранить конфигурацию
+  .config load <name> - загрузить конфигурацию
+  .prefix <new prefix> - изменить префикс команд
+
+ДОСТУПНЫЕ МОДУЛИ:
+----------------------------------------
+Combat: KillAura, Aura, AutoArmor, AutoTotem, Criticals, Regen, Velocity
+Movement: Fly, Speed, Sprint, Step, NoSlow, LongJump, Jesus, AirJump, Phase, Spider
+Player: NoFall, Blink, Freecam, AutoRespawn, FastPlace, FastBreak, NoRotate, AutoTool, AutoEat
+Render: ESP, Tracers, Nametags, Chams, FullBright, NoRender, XRay, StorageESP, Search, ItemESP, MobESP
+World: Scaffold, Nuker, AutoMine, Flatten, Tunnel, Filler, AutoBuild
+Misc: ClickGUI, HUD, AutoGG, AutoReconnect, ChatSuffix, MiddleClick, TabGUI, Notifications
+
+СТРУКТУРА ПРОЕКТА:
+----------------------------------------
+C:\ZingerSoft\
+├── pom.xml                    # Maven конфигурация
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/impact/    # Исходный код
+│       └── resources/
+│           └── mcmod.info     # Информация о моде
+├── target/                    # Собранные файлы (создается после сборки)
+│   └── impact-1.0.0.jar       # Готовый JAR файл
+├── build.txt                  # Подробная инструкция
+├── README.md                  # Описание проекта
+└── impact.txt                 # Этот файл
+
+ПРИМЕЧАНИЯ:
+----------------------------------------
+- Некоторые модули требуют дополнительной реализации функционала
+- Конфигурации сохраняются в папке "zingersoft" в директории Minecraft
+- Для работы требуется Minecraft Forge 1.12.2 версии 14.23.5.2860
+- Проект использует Maven для управления зависимостями
+
+РЕШЕНИЕ ПРОБЛЕМ:
+----------------------------------------
+Если сборка не работает:
+1. Проверьте версию Java: java -version (должна быть 8+)
+2. Проверьте версию Maven: mvn -version
+3. Убедитесь, что вы в правильной директории
+4. Попробуйте: mvn clean install
+
+Если мод не загружается:
+1. Проверьте версию Forge (должна быть 14.23.5.2860)
+2. Убедитесь, что JAR файл в папке mods
+3. Проверьте логи в папке logs
+
+========================================
+УДАЧИ!
+========================================
+

@@ -1,0 +1,55 @@
+========================================
+ИНСТРУКЦИЯ ПО СБОРКЕ ZINGERSOFT CLIENT
+========================================
+
+ШАГ 1: УСТАНОВКА ЗАВИСИМОСТЕЙ
+----------------------------------------
+1. Убедитесь, что у вас установлен Java JDK 8 или выше
+2. Установите Maven (https://maven.apache.org/download.cgi)
+3. Добавьте Maven в PATH системы
+
+ШАГ 2: СБОРКА ПРОЕКТА
+----------------------------------------
+Откройте командную строку/терминал в папке проекта и выполните:
+
+    mvn clean package
+
+Это создаст JAR файл в папке: target/zingersoft-1.0.0.jar
+
+ШАГ 3: УСТАНОВКА В MINECRAFT
+----------------------------------------
+1. Установите Minecraft Forge 1.12.2 версии 14.23.5.2860
+2. Скопируйте собранный JAR файл в папку mods:
+   Windows: %appdata%\.minecraft\mods\
+   Linux/Mac: ~/.minecraft/mods/
+3. Запустите Minecraft с Forge профилем
+
+ШАГ 4: ИСПОЛЬЗОВАНИЕ
+----------------------------------------
+- Нажмите Right Shift для открытия ClickGUI
+- Используйте команды в чате с префиксом "." (точка)
+- Доступные команды:
+  .help - список команд
+  .toggle <module> - включить/выключить модуль
+  .bind <module> <key> - привязать клавишу к модулю
+  .config save <name> - сохранить конфигурацию
+  .config load <name> - загрузить конфигурацию
+  .prefix <new prefix> - изменить префикс команд
+
+ДОСТУПНЫЕ МОДУЛИ:
+----------------------------------------
+Combat: KillAura, Aura, AutoArmor, AutoTotem, Criticals, Regen, Velocity
+Movement: Fly, Speed, Sprint, Step, NoSlow, LongJump, Jesus, AirJump, Phase, Spider
+Player: NoFall, Blink, Freecam, AutoRespawn, FastPlace, FastBreak, NoRotate, AutoTool, AutoEat
+Render: ESP, Tracers, Nametags, Chams, FullBright, NoRender, XRay, StorageESP, Search, ItemESP, MobESP
+World: Scaffold, Nuker, AutoMine, Flatten, Tunnel, Filler, AutoBuild
+Misc: ClickGUI, HUD, AutoGG, AutoReconnect, ChatSuffix, MiddleClick, TabGUI, Notifications
+
+ПРИМЕЧАНИЯ:
+----------------------------------------
+- Некоторые модули требуют дополнительной реализации
+- Конфигурации сохраняются в папке "zingersoft" в директории Minecraft
+- Для работы требуется Minecraft Forge 1.12.2
+
+========================================
+
